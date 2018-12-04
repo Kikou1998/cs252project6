@@ -211,8 +211,12 @@ function collision_detection(person1, person2) {
                 player.car.position.z = 0;
                 person2.car.position.x = -10;
                 person2.car.position.z = 300;
+
                 person1.car.rotation.y = 0;
                 person2.car.rotation.y = 0;
+                
+                person1.car.turncount = 0;
+                person2.car.turncount = 0;
                 person1.spd = 0;
                 person2.spd = person2.spd + 0.2;
                 player.distance = 0;
