@@ -17,10 +17,8 @@
 	<div class="main">
 	<h2>Catch Me If You Can
 	<form id="form_id" method="post" name="myform">
-	<label>User Name :</label>
+	<label>Player Name :</label>
 	<input type="text" name="username" id="username"/>
-	<label>Password :</label>
-	<input type="password" name="password" id="password"/>
 	<input type="button" value="Login" id="submit"/>
 	</h2>
 	</form>
@@ -45,6 +43,64 @@
 		login_submit.onclick = function() {
 			signDiv.style.display = 'none';
 			gameDiv.style= 'position : relative';
+			document.onkeydown = function(event){
+       // audio.play();
+				// event.preventDefault();
+							audio.play();
+
+				console.log(event.keyCode);
+				c = String.fromCharCode(event.keyCode);
+				if (event.shiftKey)  {    
+						if (event.keyCode == 49)
+								c = '!';
+						else if (event.keyCode == 50)
+								c = '@';
+						else if (event.keyCode == 51)
+								c = '#';
+						else if (event.keyCode == 52)
+								c = '$';
+						else if (event.keyCode == 53) 
+								c = '%';
+						else if (event.keyCode == 54)
+								c = '^';
+						else if (event.keyCode == 55)
+								c = '&';
+						else if (event.keyCode == 56)
+								c = '*';
+						else if (event.keyCode == 57)
+								c = '(';
+						else if (event.keyCode == 58)
+								c = ')';
+						else if (event.keyCode == 59)
+								c = '_';
+						else if (event.keyCode == 60)
+								c = '+';
+				}
+				else  {
+				c = c.toLowerCase(c);
+
+				}
+				if (event.keyCode == 1186)
+				c = ';';
+				else if (event.keyCode == 188)
+				c = ',';
+				else if (event.keyCode == 189)
+				c = '-';
+				else if (event.keyCode == 190)
+				c = '.';
+				else if (event.keyCode == 191)
+				c = '/';
+				else if (event.keyCode == 222)
+				c = '\'';
+							
+
+
+				if ( c === article1.charAt(player.count)) {
+					sound.play();
+				player.spd = player.spd + 3  ;
+				player.count = player.count + 1;
+				}
+				}
 		}
 
 
@@ -346,64 +402,6 @@ function collision_detection(person1, person2) {
             }    
 }
 		
-document.onkeydown = function(event){
-       // audio.play();
-// event.preventDefault();
-			audio.play();
-
-console.log(event.keyCode);
- c = String.fromCharCode(event.keyCode);
- if (event.shiftKey)  {    
-        if (event.keyCode == 49)
-                c = '!';
-        else if (event.keyCode == 50)
-                c = '@';
-        else if (event.keyCode == 51)
-                c = '#';
-        else if (event.keyCode == 52)
-                c = '$';
-        else if (event.keyCode == 53) 
-                c = '%';
-        else if (event.keyCode == 54)
-                c = '^';
-        else if (event.keyCode == 55)
-                c = '&';
-        else if (event.keyCode == 56)
-                c = '*';
-        else if (event.keyCode == 57)
-                c = '(';
-        else if (event.keyCode == 58)
-                c = ')';
-        else if (event.keyCode == 59)
-                c = '_';
-        else if (event.keyCode == 60)
-                c = '+';
- }
- else  {
-c = c.toLowerCase(c);
-
-}
-if (event.keyCode == 1186)
-c = ';';
-else if (event.keyCode == 188)
-c = ',';
-else if (event.keyCode == 189)
-c = '-';
-else if (event.keyCode == 190)
-c = '.';
-else if (event.keyCode == 191)
-c = '/';
-else if (event.keyCode == 222)
-c = '\'';
-               
-
-
-if ( c === article1.charAt(player.count)) {
-	sound.play();
-player.spd = player.spd + 3  ;
-player.count = player.count + 1;
-}
-}
 
 		
 function updatePosition(someone, direction) {
