@@ -200,21 +200,14 @@ text_field.innerHTML = "Waiting for both player to get ready...";
 
 		//geometry2.addAttribute('position', new THREE.BufferAttribute(positions,3));
 
-		var material = new THREE.MeshLambertMaterial({color: 0xFFFFFF, wireframe: false});
-		var mesh = new THREE.Mesh(geometry,material);
-		var mesh1 = new THREE.Mesh(geometry2,material);
-		var mesh2 = new THREE.Mesh(geometry,material);
-		var mesh3 = new THREE.Mesh(geometry, material);
-		mesh.position.set(0,75,-100);
-		mesh1.position.set(300,150,-300);
-		mesh2.position.set(-300,75,-300);
-		mesh3.position.set(150,75,200);
-
 		
 
 		THREE.DRACOLoader.setDecoderPath( 'client/js/libs/draco' );
 		var loader = new THREE.GLTFLoader();
 		loader.setDRACOLoader(new THREE.DRACOLoader());
+
+		var policecam;
+		var thiefcam;
 
 		loader.load(
 			'client/models/cenario_urbano/scene.gltf',
