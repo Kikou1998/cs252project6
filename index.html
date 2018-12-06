@@ -10,13 +10,27 @@
 		}
 
 	</style>
+<link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-	 <div style="position: relative">
+	<div id="signDiv" class="container">
+	<div class="main">
+	<h2>Catch Me If You Can</h2>
+	<form id="form_id" method="post" name="myform">
+	<label>User Name :</label>
+	<input type="text" name="username" id="username"/>
+	<label>Password :</label>
+	<input type="password" name="password" id="password"/>
+	<input type="button" value="Login" id="submit"/>
+	</form>
+	</div>
+	</div>
+	 <div id="gameDiv" style="display:none;">
                 <p style="position: fixed; bottom: 0; width:100%; text-align: center"><font size = "5" color = 'red' face = "Verdana"><b id="id01">TEXT YOU WANT</b></font>
                 </p>
             </div>
 
+	<script src="js/login.js"></script>
 	<script src="js/three.js"></script>
 	<script src="js/OrbitControls.js"></script>
 	<script src="js/loaders/DRACOLoader.js"></script>
@@ -24,7 +38,20 @@
 	<script src="js/controls/TransformControls.js"></script>
 
 	<script>
+		//login
+		var login_username = document.getElementById("username");
+		var login_submit = document.getElementById("submit");
+		login_submit.onclick = function() {
+			signDiv.style.display = 'none';
+			gameDiv.stype.position = 'relative';
+		}
 
+
+
+
+
+
+//game
 var article1 ="China has agreed to reclassify fentanyl as a controlled substance, in what the White House is calling a wonderful humanitarian gesture after the much-anticipated talks Saturday between US President Donald Trump and Chinese President Xi Jinping in Buenos Aires, Argentina. In a statement, China's Foreign Ministry said China has decided to schedule the entire category of fentanyl-type substances as controlled substances, and start the process of revising relevant laws and regulations.China and the United States have agreed to take active measures to strengthen cooperation on law enforcement and narcotics control, including the control of fentanyl-type substances, it said. The new designation for the synthetic opioid drug means people in China who sell fentanyl to the US will be subject to China's maximum penalty under the law, according to a statement from the White House. Trump and Xi met Saturday for dinner on the sidelines of the G20 summit in Buenos Aires. Fentanyl's new designation is one result from their meeting. The US also agreed to maintain the 10% tariffs on $200 billion worth of Chinese goods, instead of raising them to 25%, the White House said. Fentanyl, an extremely powerful drug, is 50 to 100 times more potent than morphine and 30 to 50 times more potent than heroin. According to the US Centers for Disease Control and Prevention, 5,500 people died of synthetic opioid overdoses in 2014, most of them related to fentanyl. That's an 80% increase over the number of deaths reported in 2013. Last year, the Drug Enforcement Administration issued a national alert stating that drug incidents and overdoses related to fentanyl are occurring at an alarming rate. In 2013, the Drug Enforcement Administration made 942 fentanyl seizures; in 2014, it made 3,344. In August, Trump claimed on Twitter Chinese suppliers are fueling America's opioid crisis. It is outrageous that Poisonous Synthetic Heroin Fentanyl comes pouring into the U.S. Postal System from China. We can, and must, END THIS NOW! The Senate should pass the STOP ACT -- and firmly STOP this poison from killing our children and destroying our country. No more delay! the tweet said.";
 
 
