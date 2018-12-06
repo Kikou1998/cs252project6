@@ -158,6 +158,10 @@ io.sockets.on('connection', function(socket) {
 				console.log("thief name: ",data.name);
 			});
 
+		socket.on('score', function(data){
+				console.log(thief.name,": ",data.score);
+			});
+
 			}
 
 			else if (socket.role == 1)  // police
@@ -174,6 +178,10 @@ io.sockets.on('connection', function(socket) {
 				police_ready = 1;
 				police.name = data.name;
 				console.log("police name: ",data.name);
+			});
+
+			socket.on('score', function(data){
+				console.log(police.name,": ",data.score);
 			});
 
 			}  // end else 
