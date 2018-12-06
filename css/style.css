@@ -68,7 +68,7 @@ h2{
     font-size: 16px;
     background: linear-gradient(#ffbc00 5%, #ffdd7f 100%);
     border: 1px solid #e5a900;
-    color: #4E4D4B;
+    color: red;
     font-weight: bold;
     cursor: pointer;
     width: 100%;
